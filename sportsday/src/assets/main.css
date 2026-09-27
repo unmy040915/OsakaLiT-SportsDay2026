@@ -1,35 +1,74 @@
-@import './base.css';
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
   font-weight: normal;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+body {
+  min-height: 100vh;
+  background: #161c16;
+  font-family: 'RocknRoll One', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+#app {
+  position: relative;
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+img {
+  display: block;
+  max-width: 100%;
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+/* ===== Section badges (shared by every page section) ===== */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 40px;
+  border-radius: 2px;
+  border-width: 3px;
+  border-style: solid;
+  font-size: 40px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.badge--blue-on-white {
+  background: #F9FAF7;
+  border-color: #374BFF;
+  color: #374BFF;
+}
+.badge--lime-on-dark {
+  background: #181C18;
+  border-color: #F9FAF7;
+  color: #AAFF00;
+}
+.badge--lime-bg {
+  background: #AAFF00;
+  border-color: #F9FAF7;
+  color: #181C18;
+}
+.badge--blue-bg {
+  background: #374BFF;
+  border-color: #F9FAF7;
+  color: #F9FAF7;
+}
+.badge--yellow-bg {
+  background: #FFE600;
+  border-color: #F9FAF7;
+  color: #181C18;
+}
+.badge--blue-on-white-small {
+  background: #F9FAF7;
+  border-color: #374BFF;
+  color: #374BFF;
+}
+
+.bottom-badge-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
 }

@@ -3,8 +3,10 @@ import { ref, onMounted, onUnmounted, watch } from 'vue'
 import { drawScratchedGrid, defaultOptions } from '@/lib/scratchedGrid'
 
 const props = defineProps({
+  verticalLines: { type: Number, default: defaultOptions.verticalLines },
   cellSize: { type: Number, default: defaultOptions.cellSize },
   wobble: { type: Number, default: defaultOptions.wobble },
+  waveCells: { type: Number, default: defaultOptions.waveCells },
   background: { type: String, default: defaultOptions.background },
   gridColor: { type: String, default: defaultOptions.gridColor },
   gridWidth: { type: Number, default: defaultOptions.gridWidth },

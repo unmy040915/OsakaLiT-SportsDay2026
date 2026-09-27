@@ -1,10 +1,9 @@
 <script setup>
 import ScratchedGridBackground from '@/components/ScratchedGridBackground.vue'
+import HomePage from '@/components/HomePage.vue'
 </script>
 
 <template>
   <ScratchedGridBackground />
-  <main>
-    <!-- 実際のコンテンツはここ、canvasの上に重なる -->
-  </main>
+  <HomePage />
 </template>

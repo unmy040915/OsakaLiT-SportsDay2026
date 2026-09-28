@@ -4,6 +4,9 @@ import { venueTeams } from '@/data/venue'
 
 <template>
   <section class="section section--venue">
+    <div class="bottom-badge-row">
+      <div class="section-badge badge--blue-bg">配置図</div>
+    </div>
     <!-- 位置は枠内（936×569.846）に対する%。PCでは Figma の座標と一致する -->
     <div class="venue-map">
       <p class="venue-title">会場　二色浜公園スポーツ広場</p>
@@ -36,8 +39,8 @@ import { venueTeams } from '@/data/venue'
 </template>
 
 <style scoped>
-.section--venue {
-  padding-top: 60px;
+.bottom-badge-row {
+  margin-bottom: 70px;
 }
 
 .venue-map {

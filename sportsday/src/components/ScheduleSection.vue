@@ -5,7 +5,6 @@ import { scheduleItems } from '@/data/schedule'
 
 <template>
   <section class="section section--schedule">
-          <!-- スケジュール section badge (at bottom of hero section) -->
       <div class="bottom-badge-row">
         <div class="section-badge badge--lime-on-dark">スケジュール</div>
       </div>

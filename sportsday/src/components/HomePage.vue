@@ -12,9 +12,6 @@ import { staffRows } from '@/data/staff'
 <template>
   <main class="page">
 
-    <!-- ============================================================
-         SECTION 1: HERO
-         ============================================================ -->
     <section class="section section--hero">
 
       <!-- Hero Illustration — Figma frame 32:2101 (1185.999×612.25px) -->
@@ -72,10 +69,6 @@ import { staffRows } from '@/data/staff'
       </div>
     </section>
 
-
-    <!-- ============================================================
-         SECTION 2: SCHEDULE
-         ============================================================ -->
     <ScheduleSection />
 
 
@@ -94,7 +87,7 @@ import { staffRows } from '@/data/staff'
       <div class="teams-grid">
 
         <!-- 赤団 (top-left, 596×516px) — photos left, labels right -->
-        <div class="tc-card" style="--card-h:516px;--body-x:28.7px;--body-y:82.09px;--body-w:520.051px;--body-h:433.203px">
+        <div class="tc-card" style="--body-x:28.7px">
           <div class="tc-body"></div>
           <div class="tc-badge-wrap" style="left:-0.25px;top:10.75px;width:150.77px;height:103.84px;">
             <div class="tc-badge" style="background:#EE3F38;">赤団</div>
@@ -120,7 +113,7 @@ import { staffRows } from '@/data/staff'
               </div>
             </div>
           </FitScale>
-          <div class="tc-bubble" style="--x:80.39px;--y:287.31px;--w:416.661px;--h:201.093px;--pad:32.54px 27.91px 0 27.92px">
+          <div class="tc-bubble" style="--x:80.39px;--y:287.31px;--w:416.661px;--h:201.093px;--pad:32.54px 27.91px 20px 27.92px">
             <CommentBubble color="#EE3F38" tab="left">
               <p class="tc-comment">皆様、こんにちは。今回の運動会は、我々赤組が優勝させていただきます。皆様には申し訳ございませんが、全ての競技において赤組が勝利し、圧倒いたします。皆様がつまらなくなってしまっても、それは我々の責任ではございません。私どもが優勝する姿を、一番近くの特等席でご覧にいれます。皆様で楽しんで運動会を進めていきましょう。</p>
             </CommentBubble>
@@ -128,7 +121,7 @@ import { staffRows } from '@/data/staff'
         </div>
 
         <!-- 青団 (top-right, 594×563px) — photos right, labels left -->
-        <div class="tc-card" style="--card-h:563px;--body-x:57.5px;--body-y:80.99px;--body-w:512.067px;--body-h:426.553px">
+        <div class="tc-card" style="--body-x:57.5px">
           <div class="tc-body"></div>
           <div class="tc-badge-wrap" style="left:29px;top:10.75px;width:148.679px;height:103.451px;">
             <div class="tc-badge" style="background:#374BFF;">青団</div>
@@ -140,7 +133,7 @@ import { staffRows } from '@/data/staff'
               <img class="tc-abs" style="left:88px;top:38.62px;width:211.401px;height:150.72px;transform:rotate(4.36deg);z-index:2" src="/assets/teams/blue/mapoco-bg.svg" alt="" />
               <img class="tc-photo" style="left:89.93px;top:0.87px;width:272.684px;height:189.828px;transform:rotate(4.36deg);z-index:3" src="/assets/teams/blue/photo-mapoco.png" alt="まぽこ" />
               <!-- やいまる背景の六角フレーム (Figma 38:540) -->
-              <img class="tc-abs" style="left:39px;top:110px;width:140.677px;height:119.496px;transform:scaleX(-1) rotate(-19.71deg);z-index:2" src="/assets/teams/blue/hex-yaimaru.svg" alt="" />
+              <img class="tc-abs" style="left:39px;top:110px;width:140.677px;height:119.496px;transform:rotate(-19.71deg);z-index:2" src="/assets/teams/blue/hex-yaimaru.svg" alt="" />
               <img class="tc-photo" style="left:0px;top:81px;width:218px;height:183px;transform:rotate(-5.72deg);z-index:4" src="/assets/teams/blue/photo-yaimaru.png" alt="やいまる" />
             </div>
             <div class="tc-labels" style="--x:0px;--y:75.75px;--gap:7px">
@@ -154,7 +147,7 @@ import { staffRows } from '@/data/staff'
               </div>
             </div>
           </FitScale>
-          <div class="tc-bubble" style="--x:108.41px;--y:280.52px;--w:410.265px;--h:200.551px;--pad:46.83px 24.43px 0 30.54px">
+          <div class="tc-bubble" style="--x:108.41px;--y:280.52px;--w:410.265px;--h:200.551px;--pad:46.83px 24.43px 20px 30.54px">
             <CommentBubble color="#374BFF" tab="right">
               <p class="tc-comment">全員ブルベの青団のうちらが華麗に優雅に優勝かましちゃうからね〜💖✨ 他のチーム全員ぶちのめして、最後に笑うのはうちらってワケ✌️💕 可愛さもかっこよさも強さも圧倒的優勝〜〜❣️ テンションぶち上げでいくよ〜〜🩵💙</p>
             </CommentBubble>
@@ -162,7 +155,7 @@ import { staffRows } from '@/data/staff'
         </div>
 
         <!-- 黄団 (bottom-left, 594×527px) — photos left, labels right -->
-        <div class="tc-card" style="--card-h:527px;--body-x:28.9px;--body-y:71.46px;--body-w:519.104px;--body-h:432.414px">
+        <div class="tc-card" style="--body-x:28.9px">
           <div class="tc-body"></div>
           <div class="tc-badge-wrap" style="left:0px;top:0.25px;width:150.522px;height:103.791px;">
             <div class="tc-badge" style="background:#FFD43B;">黄団</div>
@@ -191,15 +184,15 @@ import { staffRows } from '@/data/staff'
               </div>
             </div>
           </FitScale>
-          <div class="tc-bubble" style="--x:80.5px;--y:276.31px;--w:415.902px;--h:200.728px;--pad:49.59px 17.86px 0 32.59px">
+          <div class="tc-bubble" style="--x:80.5px;--y:276.31px;--w:415.902px;--h:200.728px;--pad:49.59px 17.86px 20px 32.59px">
             <CommentBubble color="#FFD43B" tab="left">
-              <p class="tc-comment">コメント</p>
+              <p class="tc-comment">古代中国の陰陽五行説において、「土」を司る「黄色」は高貴な色であり、「皇帝」の象徴とされてきました。つまり、土曜日の校庭が黄色団の天下となるのは歴史的にも必然なわけです。 今年も関西メンター運動会の頂点に君臨するのは黄色チームですので、他の団の皆さんは白旗の準備だけ忘れずに当日お越しくださいね。</p>
             </CommentBubble>
           </div>
         </div>
 
         <!-- 緑団 (bottom-right, 595.5×511px) — photos right, labels left -->
-        <div class="tc-card" style="--card-h:511px;--body-x:42.07px;--body-y:72.5px;--body-w:526.707px;--body-h:438.748px">
+        <div class="tc-card" style="--body-x:42.07px">
           <div class="tc-body"></div>
           <div class="tc-badge-wrap" style="left:12.75px;top:0.25px;width:152.514px;height:104.159px;">
             <div class="tc-badge" style="background:#00B10C;">緑団</div>
@@ -224,18 +217,13 @@ import { staffRows } from '@/data/staff'
               </div>
             </div>
           </FitScale>
-          <div class="tc-bubble" style="--x:94.43px;--y:277.74px;--w:421.994px;--h:206.285px;--pad:48.16px 25.14px 0 31.41px">
+          <div class="tc-bubble" style="--x:94.43px;--y:277.74px;--w:421.994px;--h:206.285px;--pad:48.16px 25.14px 20px 31.41px">
             <CommentBubble color="#00B10C" tab="right">
-              <p class="tc-comment">コメント</p>
+              <p class="tc-comment">緑団の優勝以外ありえません。幸運のクローバーは我々のものだからです。 みんなを緑団に釘付けにさせます。緑は人間の目で最も認識しやすい色だからです。 さあ皆さん、新緑のごとく鮮やかに優勝をいただきに行きましょう。</p>
             </CommentBubble>
           </div>
         </div>
 
-      </div>
-
-      <!-- 配置図 section badge -->
-      <div class="bottom-badge-row">
-        <div class="section-badge badge--blue-bg">配置図</div>
       </div>
     </section>
 
@@ -401,8 +389,11 @@ import { staffRows } from '@/data/staff'
 }
 
 .teams-grid {
+  --tc-body-w: 520px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  /* 行の高さを一番高いカードに揃え、黒ボックスを全団同じ大きさにする */
+  grid-auto-rows: 1fr;
   gap: 40px;
   width: 1228px;
   margin: 0 auto;
@@ -413,16 +404,18 @@ import { staffRows } from '@/data/staff'
 .tc-card {
   position: relative;
   width: 100%;
-  height: var(--card-h);
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 27px;
   overflow: visible;
 }
 
 .tc-body {
   position: absolute;
   left: var(--body-x);
-  top: var(--body-y);
-  width: var(--body-w);
-  height: var(--body-h);
+  top: 80px;
+  bottom: 0;
+  width: var(--tc-body-w);
   background: #181C18;
   border: 6px solid #F9FAF7;
 }
@@ -452,12 +445,13 @@ import { staffRows } from '@/data/staff'
   gap: var(--gap);
 }
 
+/* 吹き出しはデザインの高さを最小にして、コメントが長ければ伸びる。行内で余った高さも埋める */
 .tc-bubble {
-  position: absolute;
-  left: var(--x);
-  top: var(--y);
+  position: relative;
+  flex-grow: 1;
   width: var(--w);
-  height: var(--h);
+  min-height: var(--h);
+  margin: var(--y) 0 0 var(--x);
   z-index: 2;
 }
 
@@ -568,6 +562,22 @@ import { staffRows } from '@/data/staff'
 }
 
 
+/* ===== PC (≥1280px): セクション間の距離を250pxに統一 ===== */
+@media (min-width: 1280px) {
+  .section {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  /* ページ最上部からの余白は維持する（セクション間の距離とは別） */
+  .section--hero {
+    padding-top: 30px;
+  }
+  .section + .section {
+    margin-top: 250px;
+  }
+}
+
+
 /* ===== TABLET (≤1279px) ===== */
 @media (max-width: 1279px) {
   .section {
@@ -595,7 +605,7 @@ import { staffRows } from '@/data/staff'
   }
   /* 黒ボックスの位置がカードごとに違うので、ボックスの中心を列の中心に合わせる */
   .tc-card {
-    left: calc(50% - var(--body-x) - var(--body-w) / 2);
+    left: calc(50% - var(--body-x) - var(--tc-body-w) / 2);
   }
 
   .staff-content {
@@ -647,11 +657,11 @@ import { staffRows } from '@/data/staff'
   .teams-grid {
     gap: 32px;
   }
+  .teams-grid {
+    grid-auto-rows: auto;
+  }
   .tc-card {
     left: 0;
-    height: auto;
-    display: flex;
-    flex-direction: column;
     gap: 16px;
     padding: 112px 16px 24px;
   }
@@ -676,11 +686,10 @@ import { staffRows } from '@/data/staff'
     z-index: 1;
   }
   .tc-bubble {
-    position: relative;
-    left: auto;
-    top: auto;
+    flex-grow: 0;
     width: 100%;
-    height: auto;
+    min-height: 0;
+    margin: 0;
   }
   .tc-comment {
     padding: 40px 18px 18px;

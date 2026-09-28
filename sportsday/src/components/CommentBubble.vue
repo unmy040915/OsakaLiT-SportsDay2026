@@ -1,5 +1,6 @@
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref, computed } from 'vue'
+import { useElementSize } from '@/composables/useElementSize'
 
 const props = defineProps({
   color: { type: String, required: true },
@@ -7,18 +8,7 @@ const props = defineProps({
 })
 
 const rootRef = ref(null)
-const w = ref(410)
-const h = ref(200)
-let observer
-
-onMounted(() => {
-  observer = new ResizeObserver(([entry]) => {
-    w.value = entry.contentRect.width
-    h.value = entry.contentRect.height
-  })
-  observer.observe(rootRef.value)
-})
-onUnmounted(() => observer?.disconnect())
+const { width: w, height: h } = useElementSize(rootRef, { width: 410, height: 200 })
 
 // 実寸で描くので、高さが伸びても枠線の太さとタブの形は変わらない
 const pathD = computed(() =>

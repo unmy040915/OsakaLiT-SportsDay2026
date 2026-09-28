@@ -1,13 +1,12 @@
 <script setup>
 import ScheduleRow from './ScheduleRow.vue'
+import SectionBadge from './SectionBadge.vue'
 import { scheduleItems } from '@/data/schedule'
 </script>
 
 <template>
   <section class="section section--schedule">
-      <div class="bottom-badge-row">
-        <div class="section-badge badge--lime-on-dark">スケジュール</div>
-      </div>
+    <SectionBadge variant="lime-on-dark">スケジュール</SectionBadge>
     <div class="schedule-date">
       <p>2026年10月10日(土)</p>
       <p>＠二色浜公園スポーツ広場</p>
@@ -27,10 +26,6 @@ import { scheduleItems } from '@/data/schedule'
 </template>
 
 <style scoped>
-.section--schedule {
-  padding-top: 60px;
-}
-
 .bottom-badge-row {
   margin-bottom: 70px;
 }

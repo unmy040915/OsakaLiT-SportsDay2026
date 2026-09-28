@@ -1,14 +1,13 @@
 <script setup>
 import InfoRow from './InfoRow.vue'
+import SectionBadge from './SectionBadge.vue'
 import { infoRows } from '@/data/info'
 </script>
 
 <template>
   <section class="section section--info">
-    <div class="bottom-badge-row">
-      <div class="section-badge badge--yellow-bg">当日までに確認</div>
-    </div>
-    
+    <SectionBadge variant="yellow-bg">当日までに確認</SectionBadge>
+
     <div class="info-columns">
       <!-- Left: map embed -->
       <div class="info-map-col">
@@ -43,10 +42,6 @@ import { infoRows } from '@/data/info'
 </template>
 
 <style scoped>
-.section--info {
-  padding-top: 60px;
-}
-
 .bottom-badge-row {
   margin-bottom: 70px;
 }

@@ -1,5 +1,6 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, computed } from 'vue'
+import { useElementSize } from '@/composables/useElementSize'
 
 const props = defineProps({
   width: { type: Number, required: true },
@@ -8,16 +9,8 @@ const props = defineProps({
 })
 
 const outerRef = ref(null)
-const scale = ref(1)
-let observer
-
-onMounted(() => {
-  observer = new ResizeObserver(([entry]) => {
-    scale.value = Math.min(1, entry.contentRect.width / props.width)
-  })
-  observer.observe(outerRef.value)
-})
-onUnmounted(() => observer?.disconnect())
+const { width: outerWidth } = useElementSize(outerRef, { width: props.width, height: props.height })
+const scale = computed(() => Math.min(1, outerWidth.value / props.width))
 </script>
 
 <template>

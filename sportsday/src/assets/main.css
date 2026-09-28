@@ -22,6 +22,14 @@ img {
   max-width: 100%;
 }
 
+/* ===== Page sections (shared by every section component) ===== */
+/* セクション固有の上書きは各コンポーネントの scoped style に書く（そちらが優先される） */
+.section {
+  position: relative;
+  width: 100%;
+  padding: 60px 0 80px;
+}
+
 /* ===== Section badges (shared by every page section) ===== */
 .section-badge {
   display: inline-flex;
@@ -61,11 +69,6 @@ img {
   border-color: #F9FAF7;
   color: #181C18;
 }
-.badge--blue-on-white-small {
-  background: #F9FAF7;
-  border-color: #374BFF;
-  color: #374BFF;
-}
 
 .bottom-badge-row {
   display: flex;
@@ -74,12 +77,20 @@ img {
 }
 
 @media (max-width: 1279px) {
+  .section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
   .section-badge {
     font-size: 32px;
   }
 }
 
 @media (max-width: 767px) {
+  .section {
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
   .section-badge {
     padding: 6px 20px;
     font-size: 24px;

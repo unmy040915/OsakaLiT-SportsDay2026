@@ -1,12 +1,11 @@
 <script setup>
+import SectionBadge from './SectionBadge.vue'
 import { venueTeams } from '@/data/venue'
 </script>
 
 <template>
   <section class="section section--venue">
-    <div class="bottom-badge-row">
-      <div class="section-badge badge--blue-bg">配置図</div>
-    </div>
+    <SectionBadge variant="blue-bg">配置図</SectionBadge>
     <!-- 位置は枠内（936×569.846）に対する%。PCでは Figma の座標と一致する -->
     <div class="venue-map">
       <p class="venue-title">会場　二色浜公園スポーツ広場</p>
@@ -52,7 +51,8 @@ import { venueTeams } from '@/data/venue'
   background: #F9FAF7;
   border: 8px solid #AAFF00;
   /* バッジや文字を「この枠自体の幅」に対して連続的にスケールさせ、
-     ブレークポイントの境目でサイズがカクッと変わらないようにする */
+     ブレークポイントの境目でサイズがカクッと変わらないようにする。
+     1cqw = 枠線の内側(PCで936px)の1%。PCで Figma の px と一致するよう 936 基準で換算 */
   container-type: inline-size;
 }
 
@@ -61,7 +61,7 @@ import { venueTeams } from '@/data/venue'
   left: 33.832%;
   top: 7.404%;
   width: 30.639%;
-  font-size: clamp(12px, 2.1008cqw, 20px);
+  font-size: clamp(12px, 2.1368cqw, 20px);
   color: #181C18;
   text-align: center;
 }
@@ -90,9 +90,10 @@ import { venueTeams } from '@/data/venue'
 
 .venue-tent-label {
   position: absolute;
-  left: 14.06px;
-  top: 19.67px;
-  font-size: 16px;
+  /* テント枠(PCで内側 109.39×52.695px)に対する% にして、枠が縮んでも位置関係を保つ */
+  left: 12.853%;
+  top: 37.328%;
+  font-size: clamp(10px, 1.7094cqw, 16px);
   color: #181C18;
   white-space: nowrap;
 }
@@ -102,17 +103,17 @@ import { venueTeams } from '@/data/venue'
   left: 58.344%;
   top: 80.374%;
   display: flex;
-  gap: clamp(3px, 1.2605cqw, 12px);
+  gap: clamp(3px, 1.2821cqw, 12px);
 }
 
 .venue-team-badge {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: clamp(26px, 5.7773cqw, 55px);
-  height: clamp(18px, 3.8866cqw, 37px);
-  border-radius: clamp(2px, 0.4202cqw, 4px);
-  font-size: clamp(11px, 1.6807cqw, 16px);
+  width: clamp(26px, 5.8761cqw, 55px);
+  height: clamp(18px, 3.953cqw, 37px);
+  border-radius: clamp(2px, 0.4274cqw, 4px);
+  font-size: clamp(11px, 1.7094cqw, 16px);
   color: #F8FDFE;
   font-family: 'RocknRoll One', sans-serif;
   white-space: nowrap;
@@ -123,17 +124,17 @@ import { venueTeams } from '@/data/venue'
   left: 58.675%;
   top: 88.401%;
   display: flex;
-  gap: clamp(3px, 1.9958cqw, 19px);
+  gap: clamp(3px, 2.0299cqw, 19px);
 }
 
 .luggage-badge {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: clamp(26px, 5.042cqw, 48px);
-  height: clamp(16px, 2.9412cqw, 28px);
-  border-radius: clamp(1px, 0.2101cqw, 2px);
-  font-size: clamp(10px, 1.4706cqw, 14px);
+  width: clamp(26px, 5.1282cqw, 48px);
+  height: clamp(16px, 2.9915cqw, 28px);
+  border-radius: clamp(1px, 0.2137cqw, 2px);
+  font-size: clamp(10px, 1.4957cqw, 14px);
   color: #fff;
   font-family: 'RocknRoll One', sans-serif;
   white-space: nowrap;

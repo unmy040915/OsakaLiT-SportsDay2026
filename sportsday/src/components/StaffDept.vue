@@ -7,7 +7,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="staff-dept" :style="{ width: `${width}px` }">
+  <div class="staff-dept" :style="{ '--dept-w': `${width}px` }">
     <div class="dept-label">{{ label }}</div>
     <div class="dept-members">
       <span v-for="name in members" :key="name">{{ name }}</span>
@@ -17,6 +17,7 @@ defineProps({
 
 <style scoped>
 .staff-dept {
+  width: var(--dept-w);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,5 +50,25 @@ defineProps({
 
 .dept-members span {
   white-space: nowrap;
+}
+
+@media (max-width: 1279px) {
+  .dept-label {
+    font-size: 26px;
+  }
+  .dept-members {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .dept-label {
+    padding: 8px 10px;
+    border-width: 4px;
+    font-size: 18px;
+  }
+  .dept-members {
+    font-size: 18px;
+  }
 }
 </style>

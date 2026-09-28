@@ -33,7 +33,8 @@ import { scheduleItems } from '@/data/schedule'
 }
 
 .schedule-date {
-  width: 952px;
+  width: 100%;
+  max-width: 952px;
   margin: 0 auto 40px;
   text-align: center;
   font-size: 36px;
@@ -49,7 +50,24 @@ import { scheduleItems } from '@/data/schedule'
   display: flex;
   flex-direction: column;
   gap: 38px;
-  width: 952px;
+  width: 100%;
+  max-width: 952px;
   margin: 0 auto;
+}
+
+@media (max-width: 1279px) {
+  .schedule-date {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  .schedule-date {
+    margin-bottom: 28px;
+    font-size: 18px;
+  }
+  .schedule-table {
+    gap: 20px;
+  }
 }
 </style>

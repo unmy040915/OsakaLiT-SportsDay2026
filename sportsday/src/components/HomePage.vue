@@ -5,6 +5,7 @@ import PreEventInfoSection from './PreEventInfoSection.vue'
 import StaffDept from './StaffDept.vue'
 import StaffBlob from './StaffBlob.vue'
 import CommentBubble from './CommentBubble.vue'
+import FitScale from './FitScale.vue'
 import { staffRows } from '@/data/staff'
 </script>
 
@@ -17,7 +18,7 @@ import { staffRows } from '@/data/staff'
     <section class="section section--hero">
 
       <!-- Hero Illustration — Figma frame 32:2101 (1185.999×612.25px) -->
-      <div class="hero-illust" aria-hidden="true">
+      <FitScale class="hero-illust" :width="1185.999" :height="612.25" aria-hidden="true">
         <!-- Peripheral decoration -->
         <img class="illust-part" style="left:68.44px;top:0px;width:218.565px;height:277.026px"    src="/assets/hero/deco-top-left.svg" alt="" />
         <img class="illust-part" style="left:339.39px;top:79.69px;width:100.775px;height:90.123px" src="/assets/hero/deco-center-small.svg" alt="" />
@@ -59,7 +60,7 @@ import { staffRows } from '@/data/staff'
         <!-- Date banner -->
         <img class="illust-part" style="left:760px;top:360px;width:406px;height:238px"              src="/assets/hero/date-banner.svg" alt="" />
         <img class="illust-part" style="left:817px;top:452px;width:297.173px;height:91.149px"        src="/assets/hero/date-banner-text.svg" alt="" />
-      </div>
+      </FitScale>
     </section>
     <section class="section section--derby">
       <div class="bottom-badge-row">
@@ -86,108 +87,148 @@ import { staffRows } from '@/data/staff'
         <div class="section-badge badge--lime-bg">団長・副団長</div>
       </div>
 
+      <!--
+        PC: 各グループを --x / --y で絶対配置（Figma 38:511 の座標どおり）
+        SP: グループを縦に並べ、黒ボックスと吹き出しが中身に合わせて伸びる
+      -->
       <div class="teams-grid">
 
         <!-- 赤団 (top-left, 596×516px) — photos left, labels right -->
-        <div class="tc-card" style="height:516px">
-          <div class="tc-body" style="left:28.7px;top:82.09px;width:520.051px;height:433.203px;"></div>
+        <div class="tc-card" style="--card-h:516px;--body-x:28.7px;--body-y:82.09px;--body-w:520.051px;--body-h:433.203px">
+          <div class="tc-body"></div>
           <div class="tc-badge-wrap" style="left:-0.25px;top:10.75px;width:150.77px;height:103.84px;">
             <div class="tc-badge" style="background:#EE3F38;">赤団</div>
           </div>
-          <img class="tc-abs" style="left:62.9px;top:120.4px;width:146.9px;height:167.2px;z-index:1" src="/assets/teams/red/kuro-hex-fill.svg" alt="" />
-          <img class="tc-abs" style="left:68.7px;top:187.7px;width:104.9px;height:88.0px;z-index:1" src="/assets/teams/red/kuro-blob.svg" alt="" />
-          <img class="tc-abs" style="left:62.9px;top:120.4px;width:146.9px;height:167.2px;z-index:2" src="/assets/teams/red/hex-kuro.svg" alt="" />
-          <img class="tc-abs" style="left:93.5px;top:107.2px;width:151.2px;height:173.3px;transform:rotate(5.47deg);z-index:2" src="/assets/teams/red/kuro-photo-frame.svg" alt="" />
-          <img class="tc-abs" style="left:160.87px;top:159.1px;width:145.698px;height:154.333px;transform:rotate(20.83deg);z-index:2" src="/assets/teams/red/hex-pika.svg" alt="" />
-          <img class="tc-photo" style="left:72.82px;top:94.64px;width:175.724px;height:171.271px;transform:rotate(-7.87deg);z-index:3" src="/assets/teams/red/photo-kuro.png" alt="KURO" />
-          <img class="tc-photo" style="left:173.13px;top:161.67px;width:110.518px;height:122.079px;transform:rotate(6.7deg);z-index:4" src="/assets/teams/red/photo-pika.png" alt="ぴかボッヂ" />
-          <div class="tc-label" style="left:327px;top:137.75px;">
-            <p class="tc-role">団長</p>
-            <p class="tc-name">KURO</p>
+          <FitScale class="tc-head" :width="365" :height="220" style="--x:62px;--y:94px">
+            <div class="tc-photos" style="--x:0px;--y:0px;--w:245px;--h:220px">
+              <img class="tc-abs" style="left:0.9px;top:26.4px;width:146.9px;height:167.2px;z-index:1" src="/assets/teams/red/kuro-hex-fill.svg" alt="" />
+              <img class="tc-abs" style="left:6.7px;top:93.7px;width:104.9px;height:88.0px;z-index:1" src="/assets/teams/red/kuro-blob.svg" alt="" />
+              <img class="tc-abs" style="left:0.9px;top:26.4px;width:146.9px;height:167.2px;z-index:2" src="/assets/teams/red/hex-kuro.svg" alt="" />
+              <img class="tc-abs" style="left:31.5px;top:13.2px;width:151.2px;height:173.3px;transform:rotate(5.47deg);z-index:2" src="/assets/teams/red/kuro-photo-frame.svg" alt="" />
+              <img class="tc-abs" style="left:98.87px;top:65.1px;width:145.698px;height:154.333px;transform:rotate(20.83deg);z-index:2" src="/assets/teams/red/hex-pika.svg" alt="" />
+              <img class="tc-photo" style="left:10.82px;top:0.64px;width:175.724px;height:171.271px;transform:rotate(-7.87deg);z-index:3" src="/assets/teams/red/photo-kuro.png" alt="KURO" />
+              <img class="tc-photo" style="left:111.13px;top:67.67px;width:110.518px;height:122.079px;transform:rotate(6.7deg);z-index:4" src="/assets/teams/red/photo-pika.png" alt="ぴかボッヂ" />
+            </div>
+            <div class="tc-labels" style="--x:265px;--y:43.75px;--gap:7px">
+              <div class="tc-label">
+                <p class="tc-role">団長</p>
+                <p class="tc-name">KURO</p>
+              </div>
+              <div class="tc-label">
+                <p class="tc-role">副団長</p>
+                <p class="tc-name">ぴかボッヂ</p>
+              </div>
+            </div>
+          </FitScale>
+          <div class="tc-bubble" style="--x:80.39px;--y:287.31px;--w:416.661px;--h:201.093px;--pad:32.54px 27.91px 0 27.92px">
+            <CommentBubble color="#EE3F38" tab="left">
+              <p class="tc-comment">皆様、こんにちは。今回の運動会は、我々赤組が優勝させていただきます。皆様には申し訳ございませんが、全ての競技において赤組が勝利し、圧倒いたします。皆様がつまらなくなってしまっても、それは我々の責任ではございません。私どもが優勝する姿を、一番近くの特等席でご覧にいれます。皆様で楽しんで運動会を進めていきましょう。</p>
+            </CommentBubble>
           </div>
-          <div class="tc-label" style="left:327.49px;top:212.75px;">
-            <p class="tc-role">副団長</p>
-            <p class="tc-name">ぴかボッヂ</p>
-          </div>
-          <CommentBubble color="#EE3F38" tab="left" class="tc-abs" style="left:80.39px;top:287.31px;width:416.661px;height:201.093px;z-index:2" />
-          <p class="tc-comment" style="left:108.31px;top:319.85px;width:360.83px;">皆様、こんにちは。今回の運動会は、我々赤組が優勝させていただきます。皆様には申し訳ございませんが、全ての競技において赤組が勝利し、圧倒いたします。皆様がつまらなくなってしまっても、それは我々の責任ではございません。私どもが優勝する姿を、一番近くの特等席でご覧にいれます。皆様で楽しんで運動会を進めていきましょう。</p>
         </div>
 
         <!-- 青団 (top-right, 594×563px) — photos right, labels left -->
-        <div class="tc-card" style="height:563px">
-          <div class="tc-body" style="left:57.5px;top:80.99px;width:512.067px;height:426.553px;"></div>
+        <div class="tc-card" style="--card-h:563px;--body-x:57.5px;--body-y:80.99px;--body-w:512.067px;--body-h:426.553px">
+          <div class="tc-body"></div>
           <div class="tc-badge-wrap" style="left:29px;top:10.75px;width:148.679px;height:103.451px;">
             <div class="tc-badge" style="background:#374BFF;">青団</div>
           </div>
-          <!-- 青ブロブ (Figma Group 38:524) — photos より背面 -->
-          <img class="tc-abs" style="left:342px;top:104.8px;width:184.3px;height:180.7px;z-index:1" src="/assets/teams/blue/blob.svg" alt="" />
-          <img class="tc-abs" style="left:324px;top:100.62px;width:211.401px;height:150.72px;transform:rotate(4.36deg);z-index:2" src="/assets/teams/blue/mapoco-bg.svg" alt="" />
-          <img class="tc-photo" style="left:325.93px;top:62.87px;width:272.684px;height:189.828px;transform:rotate(4.36deg);z-index:3" src="/assets/teams/blue/photo-mapoco.png" alt="まぽこ" />
-          <!-- やいまる背景の六角フレーム (Figma 38:540) -->
-          <img class="tc-abs" style="left:275px;top:172px;width:140.677px;height:119.496px;transform:scaleX(-1) rotate(-19.71deg);z-index:2" src="/assets/teams/blue/hex-yaimaru.svg" alt="" />
-          <img class="tc-photo" style="left:236px;top:143px;width:218px;height:183px;transform:rotate(-5.72deg);z-index:4" src="/assets/teams/blue/photo-yaimaru.png" alt="やいまる" />
-          <div class="tc-label" style="left:144px;top:137.75px;">
-            <p class="tc-role">団長</p>
-            <p class="tc-name">まぽこ</p>
+          <FitScale class="tc-head" :width="455" :height="264" style="--x:144px;--y:62px">
+            <div class="tc-photos" style="--x:92px;--y:0px;--w:363px;--h:264px">
+              <!-- 青ブロブ (Figma Group 38:524) — photos より背面 -->
+              <img class="tc-abs" style="left:106px;top:42.8px;width:184.3px;height:180.7px;z-index:1" src="/assets/teams/blue/blob.svg" alt="" />
+              <img class="tc-abs" style="left:88px;top:38.62px;width:211.401px;height:150.72px;transform:rotate(4.36deg);z-index:2" src="/assets/teams/blue/mapoco-bg.svg" alt="" />
+              <img class="tc-photo" style="left:89.93px;top:0.87px;width:272.684px;height:189.828px;transform:rotate(4.36deg);z-index:3" src="/assets/teams/blue/photo-mapoco.png" alt="まぽこ" />
+              <!-- やいまる背景の六角フレーム (Figma 38:540) -->
+              <img class="tc-abs" style="left:39px;top:110px;width:140.677px;height:119.496px;transform:scaleX(-1) rotate(-19.71deg);z-index:2" src="/assets/teams/blue/hex-yaimaru.svg" alt="" />
+              <img class="tc-photo" style="left:0px;top:81px;width:218px;height:183px;transform:rotate(-5.72deg);z-index:4" src="/assets/teams/blue/photo-yaimaru.png" alt="やいまる" />
+            </div>
+            <div class="tc-labels" style="--x:0px;--y:75.75px;--gap:7px">
+              <div class="tc-label">
+                <p class="tc-role">団長</p>
+                <p class="tc-name">まぽこ</p>
+              </div>
+              <div class="tc-label">
+                <p class="tc-role">副団長</p>
+                <p class="tc-name">やいまる</p>
+              </div>
+            </div>
+          </FitScale>
+          <div class="tc-bubble" style="--x:108.41px;--y:280.52px;--w:410.265px;--h:200.551px;--pad:46.83px 24.43px 0 30.54px">
+            <CommentBubble color="#374BFF" tab="right">
+              <p class="tc-comment">全員ブルベの青団のうちらが華麗に優雅に優勝かましちゃうからね〜💖✨ 他のチーム全員ぶちのめして、最後に笑うのはうちらってワケ✌️💕 可愛さもかっこよさも強さも圧倒的優勝〜〜❣️ テンションぶち上げでいくよ〜〜🩵💙</p>
+            </CommentBubble>
           </div>
-          <div class="tc-label" style="left:144px;top:212.75px;">
-            <p class="tc-role">副団長</p>
-            <p class="tc-name">やいまる</p>
-          </div>
-          <CommentBubble color="#374BFF" tab="right" class="tc-abs" style="left:108.41px;top:280.52px;width:410.265px;height:200.551px;z-index:2" />
-          <p class="tc-comment" style="left:138.95px;top:327.35px;width:355.291px;">全員ブルベの青団のうちらが華麗に優雅に優勝かましちゃうからね〜💖✨ 他のチーム全員ぶちのめして、最後に笑うのはうちらってワケ✌️💕 可愛さもかっこよさも強さも圧倒的優勝〜〜❣️ テンションぶち上げでいくよ〜〜🩵💙</p>
         </div>
 
         <!-- 黄団 (bottom-left, 594×527px) — photos left, labels right -->
-        <div class="tc-card" style="height:527px">
-          <div class="tc-body" style="left:28.9px;top:71.46px;width:519.104px;height:432.414px;"></div>
+        <div class="tc-card" style="--card-h:527px;--body-x:28.9px;--body-y:71.46px;--body-w:519.104px;--body-h:432.414px">
+          <div class="tc-body"></div>
           <div class="tc-badge-wrap" style="left:0px;top:0.25px;width:150.522px;height:103.791px;">
             <div class="tc-badge" style="background:#FFD43B;">黄団</div>
           </div>
-          <!-- 黄ブロブ群 (Figma Group 38:1154) -->
-          <img class="tc-abs" style="left:75.5px;top:128.4px;width:174.328px;height:155.377px;transform:rotate(-15.65deg);z-index:1" src="/assets/teams/yellow/blob-main.svg" alt="" />
-          <img class="tc-abs" style="left:71.1px;top:134.1px;width:138.02px;height:117.284px;transform:rotate(-15.65deg);z-index:2" src="/assets/teams/yellow/blob-inner-1.svg" alt="" />
-          <img class="tc-abs" style="left:100.7px;top:189.9px;width:157.593px;height:90.367px;transform:rotate(-15.65deg);z-index:3" src="/assets/teams/yellow/blob-inner-2.svg" alt="" />
-          <!-- ひむら -->
-          <img class="tc-abs" style="left:88.3px;top:91.6px;width:119.5px;height:187px;transform:rotate(3.67deg);z-index:4" src="/assets/teams/yellow/hex-himura.svg" alt="" />
-          <img class="tc-photo" style="left:95.09px;top:103.88px;width:94.022px;height:154.924px;transform:rotate(-9.88deg);z-index:5" src="/assets/teams/yellow/photo-himura.png" alt="ひむら" />
-          <!-- ゆーとぅー -->
-          <img class="tc-abs" style="left:151.6px;top:163.4px;width:139.341px;height:140.733px;transform:rotate(2.76deg);z-index:4" src="/assets/teams/yellow/hex-yutou.svg" alt="" />
-          <img class="tc-photo" style="left:147.39px;top:137.06px;width:142.524px;height:142.524px;transform:rotate(8.31deg);z-index:5" src="/assets/teams/yellow/photo-yutou.png" alt="ゆーとぅー" />
-          <div class="tc-label" style="left:327.02px;top:125.25px;">
-            <p class="tc-role">団長</p>
-            <p class="tc-name">ひむら</p>
+          <FitScale class="tc-head" :width="356" :height="214" style="--x:71px;--y:91px">
+            <div class="tc-photos" style="--x:0px;--y:0px;--w:220px;--h:214px">
+              <!-- 黄ブロブ群 (Figma Group 38:1154) -->
+              <img class="tc-abs" style="left:4.5px;top:37.4px;width:174.328px;height:155.377px;transform:rotate(-15.65deg);z-index:1" src="/assets/teams/yellow/blob-main.svg" alt="" />
+              <img class="tc-abs" style="left:0.1px;top:43.1px;width:138.02px;height:117.284px;transform:rotate(-15.65deg);z-index:2" src="/assets/teams/yellow/blob-inner-1.svg" alt="" />
+              <img class="tc-abs" style="left:29.7px;top:98.9px;width:157.593px;height:90.367px;transform:rotate(-15.65deg);z-index:3" src="/assets/teams/yellow/blob-inner-2.svg" alt="" />
+              <!-- ひむら -->
+              <img class="tc-abs" style="left:17.3px;top:0.6px;width:119.5px;height:187px;transform:rotate(3.67deg);z-index:4" src="/assets/teams/yellow/hex-himura.svg" alt="" />
+              <img class="tc-photo" style="left:24.09px;top:12.88px;width:94.022px;height:154.924px;transform:rotate(-9.88deg);z-index:5" src="/assets/teams/yellow/photo-himura.png" alt="ひむら" />
+              <!-- ゆーとぅー -->
+              <img class="tc-abs" style="left:80.6px;top:72.4px;width:139.341px;height:140.733px;transform:rotate(2.76deg);z-index:4" src="/assets/teams/yellow/hex-yutou.svg" alt="" />
+              <img class="tc-photo" style="left:76.39px;top:46.06px;width:142.524px;height:142.524px;transform:rotate(8.31deg);z-index:5" src="/assets/teams/yellow/photo-yutou.png" alt="ゆーとぅー" />
+            </div>
+            <div class="tc-labels" style="--x:256.02px;--y:34.25px;--gap:10px">
+              <div class="tc-label">
+                <p class="tc-role">団長</p>
+                <p class="tc-name">ひむら</p>
+              </div>
+              <div class="tc-label">
+                <p class="tc-role">副団長</p>
+                <p class="tc-name">ゆーとぅー</p>
+              </div>
+            </div>
+          </FitScale>
+          <div class="tc-bubble" style="--x:80.5px;--y:276.31px;--w:415.902px;--h:200.728px;--pad:49.59px 17.86px 0 32.59px">
+            <CommentBubble color="#FFD43B" tab="left">
+              <p class="tc-comment">コメント</p>
+            </CommentBubble>
           </div>
-          <div class="tc-label" style="left:327.15px;top:203.25px;">
-            <p class="tc-role">副団長</p>
-            <p class="tc-name">ゆーとぅー</p>
-          </div>
-          <CommentBubble color="#FFD43B" tab="left" class="tc-abs" style="left:80.5px;top:276.31px;width:415.902px;height:200.728px;z-index:2" />
-          <p class="tc-comment" style="left:113.09px;top:325.9px;width:365.449px;">コメント</p>
         </div>
 
         <!-- 緑団 (bottom-right, 595.5×511px) — photos right, labels left -->
-        <div class="tc-card" style="height:511px">
-          <div class="tc-body" style="left:42.07px;top:72.5px;width:526.707px;height:438.748px;"></div>
+        <div class="tc-card" style="--card-h:511px;--body-x:42.07px;--body-y:72.5px;--body-w:526.707px;--body-h:438.748px">
+          <div class="tc-body"></div>
           <div class="tc-badge-wrap" style="left:12.75px;top:0.25px;width:152.514px;height:104.159px;">
             <div class="tc-badge" style="background:#00B10C;">緑団</div>
           </div>
-          <!-- 緑ブロブ (Figma Group 38:655) — photos より背面 -->
-          <img class="tc-abs" style="left:352px;top:81.9px;width:199px;height:214.7px;z-index:1" src="/assets/teams/green/blob.svg" alt="" />
-          <img class="tc-abs" style="left:368px;top:88.5px;width:196.5px;height:212.7px;z-index:2" src="/assets/teams/green/kurie-deco.svg" alt="" />
-          <img class="tc-abs" style="left:279.8px;top:133.1px;width:177.9px;height:184.8px;transform:rotate(-13.66deg);z-index:2" src="/assets/teams/green/hex-mahoho.svg" alt="" />
-          <img class="tc-photo" style="left:321.72px;top:81.9px;width:261.254px;height:186.905px;transform:rotate(5.32deg);z-index:3" src="/assets/teams/green/photo-kurie.png" alt="カーリー" />
-          <img class="tc-photo" style="left:320.6px;top:160.8px;width:94.184px;height:121.149px;transform:rotate(-8.28deg);z-index:4" src="/assets/teams/green/photo-mahoho.png" alt="まほほ" />
-          <div class="tc-label" style="left:144.75px;top:125.25px;">
-            <p class="tc-role">団長</p>
-            <p class="tc-name">カーリー</p>
+          <FitScale class="tc-head" :width="439.25" :height="237" style="--x:144.75px;--y:81px">
+            <div class="tc-photos" style="--x:134.25px;--y:0px;--w:305px;--h:237px">
+              <!-- 緑ブロブ (Figma Group 38:655) — photos より背面 -->
+              <img class="tc-abs" style="left:73px;top:0.9px;width:199px;height:214.7px;z-index:1" src="/assets/teams/green/blob.svg" alt="" />
+              <img class="tc-abs" style="left:89px;top:7.5px;width:196.5px;height:212.7px;z-index:2" src="/assets/teams/green/kurie-deco.svg" alt="" />
+              <img class="tc-abs" style="left:0.8px;top:52.1px;width:177.9px;height:184.8px;transform:rotate(-13.66deg);z-index:2" src="/assets/teams/green/hex-mahoho.svg" alt="" />
+              <img class="tc-photo" style="left:42.72px;top:0.9px;width:261.254px;height:186.905px;transform:rotate(5.32deg);z-index:3" src="/assets/teams/green/photo-kurie.png" alt="カーリー" />
+              <img class="tc-photo" style="left:41.6px;top:79.8px;width:94.184px;height:121.149px;transform:rotate(-8.28deg);z-index:4" src="/assets/teams/green/photo-mahoho.png" alt="まほほ" />
+            </div>
+            <div class="tc-labels" style="--x:0px;--y:44.25px;--gap:10px">
+              <div class="tc-label">
+                <p class="tc-role">団長</p>
+                <p class="tc-name">カーリー</p>
+              </div>
+              <div class="tc-label">
+                <p class="tc-role">副団長</p>
+                <p class="tc-name">まほほ</p>
+              </div>
+            </div>
+          </FitScale>
+          <div class="tc-bubble" style="--x:94.43px;--y:277.74px;--w:421.994px;--h:206.285px;--pad:48.16px 25.14px 0 31.41px">
+            <CommentBubble color="#00B10C" tab="right">
+              <p class="tc-comment">コメント</p>
+            </CommentBubble>
           </div>
-          <div class="tc-label" style="left:144.75px;top:203.25px;">
-            <p class="tc-role">副団長</p>
-            <p class="tc-name">まほほ</p>
-          </div>
-          <CommentBubble color="#00B10C" tab="right" class="tc-abs" style="left:94.43px;top:277.74px;width:421.994px;height:206.285px;z-index:2" />
-          <p class="tc-comment" style="left:125.84px;top:325.9px;width:365.449px;">コメント</p>
         </div>
 
       </div>
@@ -221,19 +262,21 @@ import { staffRows } from '@/data/staff'
         <div class="staff-content">
           <div class="section-badge badge--blue-on-white">運営</div>
 
-          <div
-            v-for="row in staffRows"
-            :key="row.modifier"
-            class="staff-dept-row"
-            :class="`staff-dept-row--${row.modifier}`"
-          >
-            <StaffDept
-              v-for="dept in row.depts"
-              :key="dept.key"
-              :label="dept.label"
-              :members="dept.members"
-              :width="dept.width"
-            />
+          <div class="staff-depts">
+            <div
+              v-for="row in staffRows"
+              :key="row.modifier"
+              class="staff-dept-row"
+              :class="`staff-dept-row--${row.modifier}`"
+            >
+              <StaffDept
+                v-for="dept in row.depts"
+                :key="dept.key"
+                :label="dept.label"
+                :members="dept.members"
+                :width="dept.width"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -280,15 +323,6 @@ import { staffRows } from '@/data/staff'
   flex-direction: column;
   align-items: center;
   gap: 70px;
-}
-
-/* Hero illustration: Figma frame 32:2101 (1185.999×612.25px) */
-.hero-illust {
-  position: relative;
-  width: 1185.999px;
-  height: 612.25px;
-  margin: 0 auto;
-  overflow: visible;
 }
 
 .illust-part {
@@ -339,7 +373,8 @@ import { staffRows } from '@/data/staff'
   line-height: 1.4;
   color: #F9FAF7;
   text-align: left;
-  width: 952px;
+  width: 100%;
+  max-width: 952px;
 }
 
 .cta-btn {
@@ -378,13 +413,52 @@ import { staffRows } from '@/data/staff'
 .tc-card {
   position: relative;
   width: 100%;
+  height: var(--card-h);
   overflow: visible;
 }
 
 .tc-body {
   position: absolute;
+  left: var(--body-x);
+  top: var(--body-y);
+  width: var(--body-w);
+  height: var(--body-h);
   background: #181C18;
   border: 6px solid #F9FAF7;
+}
+
+/* 写真と名前のかたまり。SPではこのまま縮小して、PC・タブレットと同じ配置を保つ */
+.tc-head {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+}
+
+.tc-photos {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--w);
+  height: var(--h);
+}
+
+.tc-labels {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.tc-bubble {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--w);
+  height: var(--h);
+  z-index: 2;
 }
 
 .tc-badge-wrap {
@@ -419,22 +493,17 @@ import { staffRows } from '@/data/staff'
   pointer-events: none;
 }
 
-.tc-label {
-  position: absolute;
-  z-index: 6;
-}
-
 .tc-role,
 .tc-name {
   font-size: 20px;
   color: #F9FAF7;
   line-height: 34px;
   margin: 0;
+  white-space: nowrap;
 }
 
 .tc-comment {
-  position: absolute;
-  z-index: 3;
+  padding: var(--pad);
   font-size: 15px;
   color: #181C18;
   line-height: 1.6;
@@ -476,6 +545,12 @@ import { staffRows } from '@/data/staff'
   padding: 242px 60px 320px;
 }
 
+.staff-depts {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
 .staff-dept-row {
   display: flex;
   justify-content: space-between;
@@ -490,5 +565,152 @@ import { staffRows } from '@/data/staff'
   font-size: 20px;
   color: #FFE600;
   padding: 60px 0 40px;
+}
+
+
+/* ===== TABLET (≤1279px) ===== */
+@media (max-width: 1279px) {
+  .section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .section--staff {
+    padding: 0;
+  }
+
+  .section--derby .bottom-badge-row {
+    gap: 48px;
+  }
+  .hero-description {
+    font-size: 28px;
+  }
+  .cta-btn {
+    font-size: 32px;
+  }
+
+  .teams-grid {
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    max-width: 600px;
+  }
+  /* 黒ボックスの位置がカードごとに違うので、ボックスの中心を列の中心に合わせる */
+  .tc-card {
+    left: calc(50% - var(--body-x) - var(--body-w) / 2);
+  }
+
+  .staff-content {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  /* 2行に分けていた班を1つのグリッドにまとめる */
+  .staff-depts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 56px 24px;
+    width: 100%;
+    max-width: 720px;
+  }
+  .staff-dept-row {
+    display: contents;
+  }
+  .staff-depts .staff-dept {
+    width: auto;
+  }
+}
+
+
+/* ===== SP (≤767px) ===== */
+@media (max-width: 767px) {
+  .section {
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+  .section--hero {
+    padding-top: 16px;
+  }
+  .section--derby {
+    padding-top: 0;
+  }
+
+  .section--derby .bottom-badge-row {
+    gap: 28px;
+  }
+  .hero-description {
+    font-size: 18px;
+  }
+  .cta-btn {
+    padding: 8px 24px;
+    font-size: 22px;
+  }
+
+  /* 団長カード: 写真と名前はタブレットと同じ配置のまま縮小し、下に吹き出し。黒ボックスと吹き出しは中身に合わせて伸びる */
+  .teams-grid {
+    gap: 32px;
+  }
+  .tc-card {
+    left: 0;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 112px 16px 24px;
+  }
+  .tc-body {
+    left: 0;
+    right: 0;
+    top: 64px;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    border-width: 4px;
+  }
+  .tc-badge {
+    padding: 8px 18px;
+    border-width: 4px;
+    font-size: 24px;
+  }
+  .tc-head {
+    position: relative;
+    left: auto;
+    top: auto;
+    z-index: 1;
+  }
+  .tc-bubble {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+  }
+  .tc-comment {
+    padding: 40px 18px 18px;
+  }
+
+  /* 1445px幅の形を375px幅に押し込むとギザギザが鋭くなりすぎるので、倍幅で描いて左右を切る */
+  .staff-blob-container {
+    overflow: hidden;
+  }
+  .staff-blob-svg {
+    left: -50%;
+    width: 200%;
+  }
+
+  .staff-content {
+    padding-bottom: 240px;
+  }
+  .staff-depts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 16px;
+  }
+  /* 9班を2列に並べると最後の1つが余るので中央に置く */
+  .staff-depts .staff-dept-row--bottom .staff-dept:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 8px);
+  }
+
+  .page-footer {
+    font-size: 14px;
+  }
 }
 </style>

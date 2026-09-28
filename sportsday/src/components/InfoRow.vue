@@ -59,4 +59,27 @@ defineProps({
   width: 100%;
   line-height: 1.5;
 }
+
+@media (max-width: 767px) {
+  .info-group {
+    padding: 0 16px;
+  }
+  .info-row {
+    gap: 12px;
+    font-size: 16px;
+  }
+  .info-key {
+    flex-shrink: 0;
+  }
+  .info-val {
+    white-space: normal;
+    text-align: right;
+  }
+  .info-sub {
+    font-size: 16px;
+  }
+  .info-warn {
+    font-size: 14px;
+  }
+}
 </style>

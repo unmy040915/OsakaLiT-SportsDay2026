@@ -16,7 +16,7 @@ function toggle() {
 </script>
 
 <template>
-  <div class="schedule-row">
+  <div class="schedule-row" :class="{ 'schedule-row--outline': variant === 'outline' }">
     <span class="schedule-time">{{ time }}</span>
     <div
       class="schedule-event"
@@ -121,5 +121,62 @@ function toggle() {
 .expand-leave-to {
   opacity: 0;
   max-height: 0;
+}
+
+@media (max-width: 1279px) {
+  .schedule-time,
+  .schedule-event {
+    font-size: 28px;
+  }
+  .schedule-time {
+    top: 20px;
+  }
+  .schedule-description {
+    padding-left: 140px;
+  }
+}
+
+/* SP: 時刻は帯の左端。競技名は帯の中央（左右の余白を同じにする）に置き、長ければ折り返す */
+@media (max-width: 767px) {
+  .schedule-time {
+    left: 12px;
+    top: 0;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    pointer-events: none;
+  }
+  .schedule-row--outline .schedule-time {
+    height: 66px;
+  }
+  .schedule-event {
+    min-height: 56px;
+    font-size: 16px;
+  }
+  .schedule-event--outline {
+    margin: 0;
+    border-width: 5px;
+  }
+  .schedule-event-inner {
+    height: auto;
+    min-height: 56px;
+    padding: 8px 88px;
+    line-height: 1.4;
+    text-align: center;
+  }
+  .event-arrow {
+    right: 16px;
+    width: 20px;
+    height: 20px;
+  }
+  .event-arrow svg {
+    width: 16px;
+    height: 16px;
+  }
+  .schedule-description {
+    padding: 0 16px 16px;
+    font-size: 15px;
+  }
 }
 </style>

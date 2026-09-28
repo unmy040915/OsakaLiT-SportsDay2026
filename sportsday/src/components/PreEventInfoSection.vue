@@ -103,4 +103,44 @@ import { infoRows } from '@/data/info'
   text-align: center;
   width: 100%;
 }
+
+/* 詳細パネルが上、地図が下の縦並び */
+@media (max-width: 1279px) {
+  .info-columns {
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+    max-width: 600px;
+  }
+  .info-map-col,
+  .info-panel {
+    width: 100%;
+  }
+  .info-panel {
+    order: -1;
+  }
+}
+
+@media (max-width: 767px) {
+  .bottom-badge-row {
+    margin-bottom: 32px;
+  }
+  .info-columns {
+    gap: 28px;
+  }
+  .info-map-frame {
+    height: 260px;
+    border-width: 4px;
+  }
+  .info-map-label {
+    font-size: 20px;
+  }
+  .info-panel {
+    gap: 20px;
+    padding: 16px 0;
+  }
+  .info-item--center {
+    font-size: 20px;
+  }
+}
 </style>

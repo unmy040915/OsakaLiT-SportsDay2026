@@ -37,6 +37,7 @@ onUnmounted(() => observer?.disconnect())
         width: `${width}px`,
         height: `${height}px`,
         transform: scale < 1 ? `scale(${scale})` : 'none',
+        '--fit-scale': scale,
       }"
     >
       <slot />

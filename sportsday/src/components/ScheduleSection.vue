@@ -31,6 +31,10 @@ import { scheduleItems } from '@/data/schedule'
   padding-top: 60px;
 }
 
+.bottom-badge-row {
+  margin-bottom: 70px;
+}
+
 .schedule-date {
   width: 100%;
   max-width: 952px;

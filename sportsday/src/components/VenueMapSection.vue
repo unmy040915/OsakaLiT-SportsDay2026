@@ -51,6 +51,9 @@ import { venueTeams } from '@/data/venue'
   margin: 0 auto;
   background: #F9FAF7;
   border: 8px solid #AAFF00;
+  /* バッジや文字を「この枠自体の幅」に対して連続的にスケールさせ、
+     ブレークポイントの境目でサイズがカクッと変わらないようにする */
+  container-type: inline-size;
 }
 
 .venue-title {
@@ -58,7 +61,7 @@ import { venueTeams } from '@/data/venue'
   left: 33.832%;
   top: 7.404%;
   width: 30.639%;
-  font-size: 20px;
+  font-size: clamp(12px, 2.1008cqw, 20px);
   color: #181C18;
   text-align: center;
 }
@@ -99,19 +102,20 @@ import { venueTeams } from '@/data/venue'
   left: 58.344%;
   top: 80.374%;
   display: flex;
-  gap: 12px;
+  gap: clamp(3px, 1.2605cqw, 12px);
 }
 
 .venue-team-badge {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 55px;
-  height: 37px;
-  border-radius: 4px;
-  font-size: 16px;
+  width: clamp(26px, 5.7773cqw, 55px);
+  height: clamp(18px, 3.8866cqw, 37px);
+  border-radius: clamp(2px, 0.4202cqw, 4px);
+  font-size: clamp(11px, 1.6807cqw, 16px);
   color: #F8FDFE;
   font-family: 'RocknRoll One', sans-serif;
+  white-space: nowrap;
 }
 
 .venue-luggage {
@@ -119,19 +123,20 @@ import { venueTeams } from '@/data/venue'
   left: 58.675%;
   top: 88.401%;
   display: flex;
-  gap: 19px;
+  gap: clamp(3px, 1.9958cqw, 19px);
 }
 
 .luggage-badge {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 28px;
-  border-radius: 2px;
-  font-size: 14px;
+  width: clamp(26px, 5.042cqw, 48px);
+  height: clamp(16px, 2.9412cqw, 28px);
+  border-radius: clamp(1px, 0.2101cqw, 2px);
+  font-size: clamp(10px, 1.4706cqw, 14px);
   color: #fff;
   font-family: 'RocknRoll One', sans-serif;
+  white-space: nowrap;
 }
 
 /* SP: 図は画面幅に合わせ、文字とバッジだけ読めるサイズを保つ */
@@ -143,7 +148,6 @@ import { venueTeams } from '@/data/venue'
   .venue-title {
     left: 0;
     width: 100%;
-    font-size: 12px;
   }
   .venue-court {
     border-width: 1.5px;
@@ -162,26 +166,9 @@ import { venueTeams } from '@/data/venue'
     display: block;
     font-size: 11px;
   }
-  .venue-teams {
-    gap: 3px;
-  }
-  /* 団バッジと荷物バッジの列をそろえる */
-  .venue-team-badge {
-    width: 26px;
-    height: auto;
-    padding: 2px 0;
-    border-radius: 2px;
-    font-size: 11px;
-  }
+  /* 団バッジと荷物バッジの列をそろえる（幅は clamp() 側で自然に揃う） */
   .venue-luggage {
     left: 58.344%;
-    gap: 3px;
-  }
-  .luggage-badge {
-    width: 26px;
-    height: auto;
-    padding: 1px 0;
-    font-size: 10px;
   }
 }
 </style>

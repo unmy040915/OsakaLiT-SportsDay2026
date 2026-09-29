@@ -7,7 +7,7 @@ export const scheduleItems = [
   { time: '11:30', label: '障害物競争', variant: 'filled', hasArrow: true, description: '今年もやってきた障害物走！チームメイトとの協力要素も加わった今年の障害物競争、6つの障害を華麗に制覇していく勝者は誰だ！お腹を空かせた方がいいかも...？' },
   { time: '12:00', label: 'おひるごはん', variant: 'filled' },
   { time: '13:00', label: '借人競争', variant: 'filled', hasArrow: true, description: '「赤い靴の人！」「眼鏡の人！」カードに書かれた人を探して全力ダッシュ！一緒にゴールをめざそう！！' },
-  { time: '13:45', label: '逆玉入れ', variant: 'filled', hasArrow: true, description: 'かごを背負った相手の団長を狙って玉を投げ込め！相手のかごにたくさん入れたチームの勝ち！逃げ切れるか、団長！入れられるか、団員！' },
+  { time: '13:45', label: '逆玉入れ', variant: 'filled', hasArrow: true, description: 'かごを背負った相手の王様を狙って玉を投げ込め！相手のかごにたくさん入れたチームの勝ち！逃げ切れるか、王様！入れられるか、団員！' },
   { time: '14:20', label: 'ピッタリを目指せ！50:50ゲーム', variant: 'filled', hasArrow: true, description: '各団が考えた二択のお題に、みんなで一斉に移動して回答！人数がより半々に分かれるほど高得点を狙えるゲーム！目指せピッタリ賞！' },
   { time: '14:55', label: '団対抗リレー', variant: 'filled', hasArrow: true, description: '5人でバトンをつなぐ王道リレー。走る距離がどんどん伸びていくぞ！シンプルだからこそいちばんアツい戦い。' },
   { time: '15:30', label: '閉会式', variant: 'filled' },

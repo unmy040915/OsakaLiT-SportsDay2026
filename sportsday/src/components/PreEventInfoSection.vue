@@ -22,7 +22,6 @@ import { infoRows } from '@/data/info'
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
-        <p class="info-map-label">会場</p>
       </div>
 
       <!-- Right: info panel -->

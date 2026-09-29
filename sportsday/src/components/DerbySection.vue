@@ -7,9 +7,13 @@ import SectionBadge from './SectionBadge.vue'
     <SectionBadge variant="blue-on-white">メンターダービー</SectionBadge>
     <div class="derby-body">
       <p class="derby-description">
-        メンターダービーの説明100文字くらいあああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
+        全競技の勝者を予想して、1位を当てるゲーム!予想を当ててポイントをGETしよう!
       </p>
-      <a class="cta-btn" href="#">参加はこちらから　→</a>
+      <div class="derby-btns">
+        <a class="cta-btn" href="#">参加はこちらから</a>
+        <a class="howto-btn" href="#">?</a>
+      </div>
+      
     </div>
   </section>
 </template>
@@ -53,6 +57,26 @@ import SectionBadge from './SectionBadge.vue'
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
+  margin: 0 20px;
+}
+.howto-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  background: #f9faf7;
+  border: 3px solid #aaff00;
+  border-radius: 50%;
+  line-height: 1;
+  font-family: "RocknRoll One", sans-serif;
+  font-size: 40px;
+  color: #181c18;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
 }
 
 @media (max-width: 1279px) {
@@ -63,6 +87,11 @@ import SectionBadge from './SectionBadge.vue'
     font-size: 28px;
   }
   .cta-btn {
+    font-size: 32px;
+  }
+  .howto-btn {
+    width: 48px;
+    height: 48px;
     font-size: 32px;
   }
 }
@@ -76,6 +105,11 @@ import SectionBadge from './SectionBadge.vue'
   }
   .cta-btn {
     padding: 8px 24px;
+    font-size: 22px;
+  }
+  .howto-btn {
+    width: 33px;
+    height: 33px;
     font-size: 22px;
   }
 }

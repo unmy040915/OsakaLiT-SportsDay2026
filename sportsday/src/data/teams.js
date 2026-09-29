@@ -23,7 +23,7 @@ export const teams = [
       parts: [
         { src: '/assets/teams/red/hex-kuro.svg', left: 0.9, top: 26.4, width: 146.9, height: 167.2, z: 1 },
         { src: '/assets/teams/red/kurofull.png', alt: 'KURO', left: 1.57, top: -12.3, width: 194.2, height: 207.6, z: 3 },
-        { src: '/assets/teams/red/pikafull.png', alt: 'ぴかボッヂ', left: 77.06, top: 40.27, width: 189.3, height: 200.96, z: 5 },
+        { src: '/assets/teams/red/pikafull.png', alt: 'ぴかボッヂ', left: 95.99, top: 60.37, width: 151.44, height: 160.77, z: 5 },
       ],
     },
     labels: { x: 265, y: 43.75, gap: 7 },
@@ -98,8 +98,8 @@ export const teams = [
     photos: {
       x: 134.25, y: 0, width: 305, height: 237,
       parts: [
-        { src: '/assets/teams/green/blob.svg', left: 73, top: 0.9, width: 199, height: 214.7, z: 1 },
-        { src: '/assets/teams/green/kuriefull.png', alt: 'カーリー', left: 15.24, top: -38.5, width: 316.2, height: 265.7, z: 2 },
+        { src: '/assets/teams/green/blob.svg', left: 92.9, top: 22.37, width: 159.2, height: 171.76, z: 1 },
+        { src: '/assets/teams/green/kuriefull.png', alt: 'カーリー', left: 15.24, top: -25.5, width: 316.2, height: 265.7, z: 2 },
         { src: '/assets/teams/green/mahohofull.png', alt: 'まほほ', left: -13.22, top: 28.63, width: 213.5, height: 221.9, z: 4 },
       ],
     },

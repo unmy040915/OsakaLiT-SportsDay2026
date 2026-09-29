@@ -15,7 +15,7 @@ export const staffRows = [
       { key: 'デザイン', label: 'デザイン班', width: 218, members: ['いっしー', 'いち', 'むた', 'ももんぐ'] },
       { key: '備品', label: '備品班', width: 154, members: ['りっちー', 'にとりん'] },
       { key: '会計', label: '会計班', width: 154, members: ['さりゅ'] },
-      { key: 'カメラ', label: 'カメラマン', width: 218, members: ['ゆーたーん'] },
+      { key: 'カメラ', label: 'カメラマン', width: 218, members: ['ゆーたーん', '有志の方たち'] },
       { key: '雨天', label: '雨天班', width: 154, members: ['さりゅ', 'りっちー', 'きゃんた', 'あるちゃん'] },
     ],
   },

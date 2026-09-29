@@ -145,11 +145,21 @@ const navItems = [
     font-size: 36px;
   }
 
+  /* スケジュール表と同じ幅（section の左右 16px を除いた全幅）に 2 列で収める */
   .nav-items {
     display: grid;
-    grid-template-columns: repeat(2, 188px);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px 12px;
-    justify-content: center;
+    width: 100%;
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .nav-shadow,
+  .nav-btn {
+    width: calc(100% - 4px);
   }
 }
 </style>

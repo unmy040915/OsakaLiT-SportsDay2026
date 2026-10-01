@@ -54,6 +54,10 @@ import { venueTeams } from '@/data/venue'
      ブレークポイントの境目でサイズがカクッと変わらないようにする。
      1cqw = 枠線の内側(PCで936px)の1%。PCで Figma の px と一致するよう 936 基準で換算 */
   container-type: inline-size;
+  /* 団バッジと荷物バッジの幅（SP で列の中心をそろえるのに使う） */
+  --team-w: clamp(26px, 5.8761cqw, 55px);
+  --team-gap: clamp(3px, 1.2821cqw, 12px);
+  --luggage-w: clamp(26px, 5.1282cqw, 48px);
 }
 
 .venue-title {
@@ -103,14 +107,14 @@ import { venueTeams } from '@/data/venue'
   left: 58.344%;
   top: 80.374%;
   display: flex;
-  gap: clamp(3px, 1.2821cqw, 12px);
+  gap: var(--team-gap);
 }
 
 .venue-team-badge {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: clamp(26px, 5.8761cqw, 55px);
+  width: var(--team-w);
   height: clamp(18px, 3.953cqw, 37px);
   border-radius: clamp(2px, 0.4274cqw, 4px);
   font-size: clamp(11px, 1.7094cqw, 16px);
@@ -131,7 +135,7 @@ import { venueTeams } from '@/data/venue'
   display: flex;
   align-items: center;
   justify-content: center;
-  width: clamp(26px, 5.1282cqw, 48px);
+  width: var(--luggage-w);
   height: clamp(16px, 2.9915cqw, 28px);
   border-radius: clamp(1px, 0.2137cqw, 2px);
   font-size: clamp(10px, 1.4957cqw, 14px);
@@ -167,9 +171,14 @@ import { venueTeams } from '@/data/venue'
     display: block;
     font-size: 11px;
   }
-  /* 団バッジと荷物バッジの列をそろえる（幅は clamp() 側で自然に揃う） */
+  /* 団バッジと荷物バッジの列をそろえる。荷物バッジは団バッジより幅が狭いので、
+     同じ間隔で並べたうえで左右に余白を足して、各列の中心を団バッジと合わせる */
   .venue-luggage {
     left: 58.344%;
+    gap: var(--team-gap);
+  }
+  .luggage-badge {
+    margin: 0 calc((var(--team-w) - var(--luggage-w)) / 2);
   }
 }
 </style>

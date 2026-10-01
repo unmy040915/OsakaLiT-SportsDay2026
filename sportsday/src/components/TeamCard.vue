@@ -36,10 +36,10 @@ function partStyle(part) {
     <div
       class="tc-badge-wrap"
       :style="{
-        left: px(team.badge.left),
-        top: px(team.badge.top),
-        width: px(team.badge.width),
-        height: px(team.badge.height),
+        '--x': px(team.badge.left),
+        '--y': px(team.badge.top),
+        '--w': px(team.badge.width),
+        '--h': px(team.badge.height),
       }"
     >
       <div class="tc-badge" :style="{ background: team.color }">{{ team.name }}</div>
@@ -164,6 +164,10 @@ function partStyle(part) {
 
 .tc-badge-wrap {
   position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--w);
+  height: var(--h);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -239,6 +243,13 @@ function partStyle(part) {
     margin-right: auto;
     border-width: 4px;
   }
+  /* 団名バッジの位置は団ごとにデザインが違うので、SPでは全団で黒ボックスの左上に同じだけ出す */
+  .tc-badge-wrap {
+    left: calc(50% - min(50%, 260px) + 29.5px);
+    top: 33px;
+    width: auto;
+    height: auto;
+  }
   .tc-badge {
     padding: 8px 18px;
     border-width: 4px;
@@ -255,6 +266,10 @@ function partStyle(part) {
     left: calc(var(--x) - 12px);
   }
   .tc-card--photos-right .tc-labels {
+    left: calc(var(--x) + 12px);
+  }
+  /* 青団・緑団は写真を少し右へ（縮小前の座標で 12px ≒ スマホで約 8px） */
+  .tc-card--photos-right .tc-photos {
     left: calc(var(--x) + 12px);
   }
   .tc-bubble {

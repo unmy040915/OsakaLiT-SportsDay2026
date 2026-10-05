@@ -1,4 +1,6 @@
 <script setup>
+import AddToHomeHint from './AddToHomeHint.vue'
+
 const navItems = [
   { number: '01', label: 'スケジュール', id: 'schedule' },
   { number: '02', label: '当日までに確認', id: 'preinfo' },
@@ -27,6 +29,7 @@ const navItems = [
         </div>
       </a>
     </div>
+    <AddToHomeHint />
   </section>
 </template>
 

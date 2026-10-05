@@ -21,17 +21,22 @@ function toggle() {
     <div
       class="schedule-event"
       :class="variant === 'outline' ? 'schedule-event--outline' : 'schedule-event--filled'"
-      :style="hasArrow ? 'cursor: pointer' : ''"
-      @click="toggle"
     >
-      <div class="schedule-event-inner">
+      <button
+        v-if="hasArrow"
+        type="button"
+        class="schedule-event-inner schedule-event-toggle"
+        :aria-expanded="isOpen"
+        @click="toggle"
+      >
         {{ label }}
-        <span v-if="hasArrow" class="event-arrow" :class="{ 'is-open': isOpen }">
+        <span class="event-arrow" :class="{ 'is-open': isOpen }" aria-hidden="true">
           <svg width="26" height="26" viewBox="0 0 25.6719 25.6094" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M21.6777 0.208008L25.6719 0.416992L24.583 21.2676L24.3555 25.6094L20.0479 25.0225L0 22.2861L1.08203 14.3594L16.8203 16.5068L17.6836 0L21.6777 0.208008Z" fill="#F9FAF7"/>
           </svg>
         </span>
-      </div>
+      </button>
+      <div v-else class="schedule-event-inner">{{ label }}</div>
       <Transition name="expand">
         <p v-if="isOpen && description" class="schedule-description">{{ description }}</p>
       </Transition>
@@ -83,6 +88,21 @@ function toggle() {
   padding: 0 37px;
   position: relative;
   flex-shrink: 0;
+}
+
+/* button のブラウザ既定スタイルを消して、div 版と同じ見た目にそろえる */
+.schedule-event-toggle {
+  width: 100%;
+  background: none;
+  border: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.schedule-event-toggle:focus-visible {
+  outline: 3px solid #ffe600;
+  outline-offset: -6px;
 }
 
 .event-arrow {

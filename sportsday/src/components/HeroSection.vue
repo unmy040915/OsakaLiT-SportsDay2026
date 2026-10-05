@@ -9,7 +9,8 @@ import { heroParts, heroSize } from '@/data/hero'
       class="hero-illust"
       :width="heroSize.width"
       :height="heroSize.height"
-      aria-hidden="true"
+      role="img"
+      aria-label="関西メンター大運動会2026"
     >
       <img
         v-for="part in heroParts"

@@ -13,11 +13,11 @@ import StaffSection from "./StaffSection.vue";
   <main class="page">
     <HeroSection />
     <NavSection />
-    <div id="derby"><DerbySection /></div>
     <div id="schedule"><ScheduleSection /></div>
-    <div id="teams"><TeamsSection /></div>
-    <div id="venue"><VenueMapSection /></div>
     <div id="preinfo"><PreEventInfoSection /></div>
+    <div id="venue"><VenueMapSection /></div>
+    <div id="teams"><TeamsSection /></div>
+    <div id="derby"><DerbySection /></div>
     <div id="staff"><StaffSection /></div>
 
     <footer class="page-footer">©関西メンター大運動会2026運営</footer>

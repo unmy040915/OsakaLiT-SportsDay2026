@@ -1,21 +1,25 @@
 <script setup>
 import SectionBadge from './SectionBadge.vue'
+
+const showComingSoon = () => {
+  alert('乞うご期待！\n詳細は近日公開')
+}
 </script>
 
 <template>
   <section class="section section--derby">
     <SectionBadge variant="blue-on-white">メンターダービー</SectionBadge>
     <div class="derby-body">
-      <!-- <p class="derby-description">
+      <p class="derby-description">
         全競技の勝者を予想して、1位を当てるゲーム!予想を当ててポイントをGETしよう!
       </p>
       <div class="derby-btns">
-        <a class="cta-btn" href="#">参加はこちらから</a>
-        <a class="howto-btn" href="#">?</a>
-      </div> -->
-      <p class="derby-prerelease">
+        <a class="cta-btn" href="#" @click.prevent="showComingSoon">ダービーに参戦</a>
+        <a class="howto-btn" href="#" @click.prevent="showComingSoon">?</a>
+      </div>
+      <!-- <p class="derby-prerelease">
         乞うご期待！
-      </p>
+      </p> -->
       
     </div>
   </section>
@@ -59,17 +63,23 @@ import SectionBadge from './SectionBadge.vue'
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 40px;
-  background: #f9faf7;
-  border: 3px solid #aaff00;
-  border-radius: 2px;
+  padding: 8px 32px;
+  background: #aaff00;
+  border: 3px solid #f9faf7;
+  border-radius: 8px;
+  box-shadow: 0 6px 0 #374bff;
   font-family: "RocknRoll One", sans-serif;
-  font-size: 40px;
+  font-size: 32px;
   color: #181c18;
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
   margin: 0 20px;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+.cta-btn:hover {
+  transform: translateY(6px);
+  box-shadow: 0 0 0 #374bff;
 }
 .howto-btn {
   display: inline-flex;
@@ -79,9 +89,10 @@ import SectionBadge from './SectionBadge.vue'
   width: 60px;
   height: 60px;
   padding: 0;
-  background: #f9faf7;
-  border: 3px solid #aaff00;
+  background: #aaff00;
+  border: 3px solid #f9faf7;
   border-radius: 50%;
+  box-shadow: 0 6px 0 #374bff;
   line-height: 1;
   font-family: "RocknRoll One", sans-serif;
   font-size: 40px;
@@ -89,6 +100,11 @@ import SectionBadge from './SectionBadge.vue'
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+.howto-btn:hover {
+  transform: translateY(6px);
+  box-shadow: 0 0 0 #374bff;
 }
 
 @media (max-width: 1279px) {
@@ -99,7 +115,7 @@ import SectionBadge from './SectionBadge.vue'
     font-size: 28px;
   }
   .cta-btn {
-    font-size: 32px;
+    font-size: 26px;
   }
   .howto-btn {
     width: 48px;
@@ -116,8 +132,8 @@ import SectionBadge from './SectionBadge.vue'
     font-size: 18px;
   }
   .cta-btn {
-    padding: 8px 24px;
-    font-size: 22px;
+    padding: 8px 20px;
+    font-size: 18px;
   }
   .howto-btn {
     width: 33px;

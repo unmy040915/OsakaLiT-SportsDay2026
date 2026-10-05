@@ -1,10 +1,10 @@
 <script setup>
 const navItems = [
-  { number: '01', label: 'メンターダービー', id: 'derby' },
-  { number: '02', label: 'スケジュール', id: 'schedule' },
-  { number: '03', label: '団長・副団長', id: 'teams' },
-  { number: '04', label: '配置図', id: 'venue' },
-  { number: '05', label: '当日までに確認', id: 'preinfo' },
+  { number: '01', label: 'スケジュール', id: 'schedule' },
+  { number: '02', label: '当日までに確認', id: 'preinfo' },
+  { number: '03', label: '配置図', id: 'venue' },
+  { number: '04', label: '団長・副団長', id: 'teams' },
+  { number: '05', label: 'メンターダービー', id: 'derby' },
   { number: '06', label: '運営', id: 'staff' },
 ]
 </script>

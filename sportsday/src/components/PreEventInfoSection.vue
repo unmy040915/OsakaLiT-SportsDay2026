@@ -1,7 +1,8 @@
 <script setup>
 import InfoRow from './InfoRow.vue'
 import SectionBadge from './SectionBadge.vue'
-import { infoRows } from '@/data/info'
+import PhotoShareCard from './PhotoShareCard.vue'
+import { infoRows, albumUrl } from '@/data/info'
 </script>
 
 <template>
@@ -34,10 +35,11 @@ import { infoRows } from '@/data/info'
           :value="row.value"
           :note="row.note"
           :warn="row.warn"
-          :href="row.href"
         />
       </div>
     </div>
+
+    <PhotoShareCard :href="albumUrl" />
   </section>
 </template>
 

@@ -6,13 +6,16 @@ import SectionBadge from './SectionBadge.vue'
   <section class="section section--derby">
     <SectionBadge variant="blue-on-white">メンターダービー</SectionBadge>
     <div class="derby-body">
-      <p class="derby-description">
+      <!-- <p class="derby-description">
         全競技の勝者を予想して、1位を当てるゲーム!予想を当ててポイントをGETしよう!
       </p>
       <div class="derby-btns">
         <a class="cta-btn" href="#">参加はこちらから</a>
         <a class="howto-btn" href="#">?</a>
-      </div>
+      </div> -->
+      <p class="derby-prerelease">
+        乞うご期待！
+      </p>
       
     </div>
   </section>
@@ -38,6 +41,15 @@ import SectionBadge from './SectionBadge.vue'
   line-height: 1.4;
   color: #f9faf7;
   text-align: left;
+  width: 100%;
+  max-width: 952px;
+  margin: 50px 0;
+}
+.derby-prerelease {
+  font-size: 36px;
+  line-height: 1.4;
+  color: #f9faf7;
+  text-align: center;
   width: 100%;
   max-width: 952px;
   margin: 50px 0;

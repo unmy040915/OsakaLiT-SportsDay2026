@@ -10,5 +10,6 @@ export const infoRows = [
     note: 'カメラ、タオル、着替え、保険証',
     warn: '⚠️アルコール・火気・そのほか会場や備品を汚す可能性があるものの持ち込み禁止 昼ごはんは近くのコンビニやスーパーで調達OK!',
   },
-  { key: '参加費', label: '参加費：', value: '〇〇〇〇円' },
+  { key: '参加費', label: '参加費：', value: '4000円' },
+  { key: 'アルバム', label: 'アルバムリンク：', value: 'こちら', href: 'https://photos.app.goo.gl/N7QMWmXB5R5ZfTTb9' },
 ]

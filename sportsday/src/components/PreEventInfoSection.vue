@@ -34,6 +34,7 @@ import { infoRows } from '@/data/info'
           :value="row.value"
           :note="row.note"
           :warn="row.warn"
+          :href="row.href"
         />
       </div>
     </div>

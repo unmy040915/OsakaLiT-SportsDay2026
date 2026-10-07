@@ -15,7 +15,6 @@ const showComingSoon = () => {
       </p>
       <div class="derby-btns">
         <a class="cta-btn" href="#" @click.prevent="showComingSoon">ダービーに参戦</a>
-        <a class="howto-btn" href="#" @click.prevent="showComingSoon">?</a>
       </div>
       <!-- <p class="derby-prerelease">
         乞うご期待！

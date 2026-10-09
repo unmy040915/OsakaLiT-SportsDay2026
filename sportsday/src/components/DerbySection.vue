@@ -14,7 +14,7 @@ const showComingSoon = () => {
         全競技の勝者を予想して、1位を当てるゲーム!予想を当ててポイントをGETしよう!
       </p>
       <div class="derby-btns">
-        <a class="cta-btn" href="#" @click.prevent="showComingSoon">ダービーに参戦</a>
+        <a class="cta-btn" href="https://kansai-mentor-derby.vercel.app/">ダービーに参戦</a>
       </div>
       <!-- <p class="derby-prerelease">
         乞うご期待！
